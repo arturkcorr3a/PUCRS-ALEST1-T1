@@ -1,8 +1,48 @@
 
 public class App {
-
     public static void main(String[] args) {
 
+        //2) PILHAS
+
+        StackOfInteger stack = new StackOfInteger();
+        System.out.println("Inserindo elementos na pilha: 1 | 2 | 3 | 4 | 5");
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        System.out.println("\nPilha: ");
+        StackOfInteger stackAux = new StackOfInteger();
+        while(!(stack.isEmpty())){
+            System.out.print(stack.top() + " | ");
+            stackAux.push(stack.pop());
+        }
+
+        int size = stack.size();
+        for(int i=0; i<size; i++){
+            stack.push(stackAux.pop());
+        }
+
+        System.out.println("\n");
+
+        System.out.println("\nArray: ");
+        Integer[] array = {1, 2, 3, 4, 5};
+        for(int i=0; i<5; i++){
+            System.out.print(array[i] + " | ");
+        }
+
+        System.out.println("\n");
+
+        System.out.println("\nArray invertido: ");
+        Integer[] arrayI = StackOfInteger.reverseArrayUsingStack(array);
+        for(int i=0; i<5; i++){
+            System.out.print(arrayI[i] + " | ");
+        }
+
+        System.out.println("\n\n");
+        //FALTA: TESTAR MÉTODOS DO EXERCÍCIO 1
+        //IMPLEMENTACAO DOUBLE LINKED LIST OF INTEGER - ESTAVA PRONTO
         DoubleLinkedListOfInteger dlist = new DoubleLinkedListOfInteger();
         dlist.add(10);
         dlist.add(20);
