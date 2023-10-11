@@ -34,7 +34,7 @@ public class QueueOfInteger{
      * Recebe como parâmetro um elemento que deve ser inserido na fila de acordo com a sua prioridade
      * @param element elemento a ser inserido 
      */
-    void enqueuePriority(Integer element){ //dá pra otimizar?
+    public void enqueuePriority(Integer element){ //dá pra otimizar?
         int size = size();
         if(size == 0 || element.compareTo(head()) <= 0) {
             queue.add(0, element);
@@ -44,7 +44,9 @@ public class QueueOfInteger{
         for(int i=0; i<size; i++){
             if((element.compareTo(queue.get(i)) <= 0) && (element.compareTo(queue.get(i-1)) >=0 )){
                 queue.add(i, element);
+                return;
             }
         }
+        queue.add(element);
     }
 }

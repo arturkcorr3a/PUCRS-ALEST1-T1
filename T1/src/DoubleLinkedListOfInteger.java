@@ -58,8 +58,8 @@ public class DoubleLinkedListOfInteger {
             }
             aux = aux.next;
         }
-        if(countOriginal == count) return true;
-        return false;
+        if(countOriginal == count) return false;
+        return true;
     }
 
     

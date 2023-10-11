@@ -1,13 +1,16 @@
+import java.util.EmptyStackException;
+
 public class StackOfInteger {
     private DoubleLinkedListOfInteger stack;
 
-    public StackOfInteger(){
+    public StackOfInteger() {
         this.stack = new DoubleLinkedListOfInteger();
     }
 
-    public Integer pop(){ //erro se a pilha estiver vazia: tratar?
-        Integer aux = stack.get(stack.size()-1);
-        stack.removeByIndex(stack.size()-1);
+    public Integer pop() throws EmptyStackException {
+        if(isEmpty()) throw new EmptyStackException();
+        Integer aux = top();
+        stack.removeByIndex(size()-1);
         return aux;
     }
 
