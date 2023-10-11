@@ -30,7 +30,7 @@ public class StackOfInteger {
         return stack.isEmpty();
     }
     
-    void clear(){
+    public void clear(){
         stack.clear();
     }
 
